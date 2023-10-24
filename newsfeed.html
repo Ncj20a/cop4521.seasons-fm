@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hacker News - Recent News</title>
+</head>
+<body>
+    <h1>Hacker News - Recent News</h1>
+    <p>Logged in as: {{ user_email }}</p>
+    <form method="POST" action="/logout">
+        <button type="submit">Sign Out</button>
+    </form>
+    <ul>
+        {% for news_item in news_items %}
+            <li><a href="{{ news_item.url }}" target="_blank">{{ news_item.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
